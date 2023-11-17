@@ -100,3 +100,29 @@ Next, we examined the different categories of causes and the total amount of tim
 **#Insert plot**
 
 Our plot shows the trends in outage duration per cause category from 2000 to 2016. We can see again that severe weather is the leading cause of power outages accounting for most of the total duration each year. The total outage duration has seen noticeable rises in certain years, particularly during the severe weather events that coincided with the Cedar Fire in 2003 and a major storm in 2011.
+
+## Assessment of Missingness
+
+### NMAR analysis
+
+In our dataset, the ‘OUTAGE.RESTORATION.DATE’ column, containing data on the end date of power outages, includes NaN values that correspond consistently for each outage in the dataset.  We predict that this data could be missing for a variety of reasons, such as instances where data was not recorded for some reason, such as the fact the outage was so minor the researchers thought to leave it out. There is even the possibility that a given power outage may not have ever officially ended, which might contribute to the missingness. In fact, we believe that this missingness could be explained with specific geographic data for any given power outage, such as the city that which the outage occurred or even the location of the power station that went down. Through the geographic data, we could perform a permutation test to determine whether or not the missingness could be attributed to any of the reasons listed beforehand.
+
+### Missingness Dependency
+
+We want to focus on the missingness of two very important columns in terms of our analysis. In the ‘CAUSE.CATEGORY.DETAIL’ column, there are some NaN values we discovered when filtering for values in California. From this, we hypothesized that these values might be missing for a multitude of reasons. For example, at the time of the creation of the dataset, the researcher may not have been able to include the details of an outage caused by something, such as severe weather. For instance, when the dataset was being created, the researcher might not have had enough knowledge to include the specifics of a power outage caused by severe weather. Factors like the type of weather leading to the disruption or other possible causes of the outage could have been overlooked. If we wanted more information to understand the missingness, we would need data on something like the season at the time of the outage and the region of occurrence, the latter of which is what we have access to, but only at a general level.
+
+To test the missingness of the ‘CAUSE.CATEGORY.DETAIL’ column, we hypothesized that the missingness is dependent on its mother column, the ‘CAUSE.CATEGORY’ column. Our hypotheses are as follows:
+
+**Null**: The distribution of ‘CAUSE.CATEGORY’ when ‘CAUSE.CATEGORY.DETAIL’ is missing is the same as the distribution of  ‘CAUSE.CATEGORY’ when  ‘CAUSE.CATEGORY.DETAIL’ is not missing.
+
+**Alternative**: The distribution of ‘CAUSE.CATEGORY’ when ‘CAUSE.CATEGORY.DETAIL’ is missing is different from the distribution of  ‘CAUSE.CATEGORY’ when  ‘CAUSE.CATEGORY.DETAIL’ is not missing.
+
+To test this, we plan on using the TVD to compare these two categorical distributions, and we will test at the 5% significance level.
+
+**INSERT PLOT HERE (maybe)**
+
+In our permutation test, we shuffled ‘CAUSE.CATEGORY’ 1000 times.
+
+**INSERT DISTRIBUTION OF TVDS (HISTOGRAM)**
+
+Wrapping up our test, we found that the p-value of the test ended up being p = 0.0019, which is far below our significance level of 0.05. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
