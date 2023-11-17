@@ -1,4 +1,4 @@
-# ca-economy-outages
+# Analyzing the Impacts of Power Outages on California's Economy: Identifying Root Causes
 
 Analyzing the Impacts of Power Outages on California's Economy: Identifying Root Causes
 Authors: Kareem Mazboudi, Mariana Paco
