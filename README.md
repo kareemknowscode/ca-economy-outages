@@ -135,13 +135,15 @@ Our plot shows the trends in outage duration per cause category from 2000 to 201
 
 ### NMAR analysis
 
-In our dataset, the `‘OUTAGE.RESTORATION.DATE’` column, containing data on the end date of power outages, includes NaN values that correspond consistently for each outage in the dataset.  We predict that this data could be missing for a variety of reasons, such as instances where data was not recorded for some reason, such as the fact the outage was so minor the researchers thought to leave it out. There is even the possibility that a given power outage may not have ever officially ended, which might contribute to the missingness. In fact, we believe that this missingness could be explained with specific geographic data for any given power outage, such as the city that which the outage occurred or even the location of the power station that went down. Through the geographic data, we could perform a permutation test to determine whether or not the missingness could be attributed to any of the reasons listed beforehand.
+Based on our dataset, it seems that the `‘OUTAGE.RESTORATION.DATE’` column is NMAR (Not Missing At Random). This column provides information on the power outage end date, but we have noticed that it contains NaN values that are consistent for every outage in the dataset. We speculate that there could be various reasons for this missing data, including instances where data was not recorded for minor outages that were not considered significant enough to be included in the dataset. Additionally, a power outage may not have ended officially, which could contribute to the missingness. In fact, we believe that this missingness could be explained as MAR (Missing At Random) if we could obtain specific geographic data for any given power outage, such as the city that which the outage occurred or even the location of the power station that went down. Through the geographic data, we could perform a permutation test to determine whether or not the missingness could be attributed to any of the reasons listed beforehand.
 
 ### Missingness Dependency
 
-We want to focus on the missingness of two very important columns in terms of our analysis. In the `‘CAUSE.CATEGORY.DETAIL’` column, there are some NaN values we discovered when filtering for values in California. From this, we hypothesized that these values might be missing for a multitude of reasons. For example, at the time of the creation of the dataset, the researcher may not have been able to include the details of an outage caused by something, such as severe weather. For instance, when the dataset was being created, the researcher might not have had enough knowledge to include the specifics of a power outage caused by severe weather. Factors like the type of weather leading to the disruption or other possible causes of the outage could have been overlooked. If we wanted more information to understand the missingness, we would need data on something like the season at the time of the outage and the region of occurrence, the latter of which is what we have access to, but only at a general level.
+We want to focus on the missingness of two very important columns in terms of our analysis. In the `‘CAUSE.CATEGORY.DETAIL’` column, there are some NaN values we discovered when filtering for values in California. From this, we hypothesized that these values might be missing for a multitude of reasons. For example, at the time of the creation of the dataset, the researcher may not have been able to include the details of an outage caused by something, such as severe weather. For instance, when the dataset was being created, the researcher might not have had enough knowledge to include the specifics of a power outage caused by severe weather. Factors like the type of weather leading to the disruption or other possible causes of the outage could have been overlooked. Given this logic, the data in this variable is NMAR. If we wanted more information to understand the missingness, we would need data on something like the season at the time of the outage and the region of occurrence, the latter of which is what we have access to, but only at a general level. With this data, we could likely find evidence and reason why our data is missing, thus making the data MAR. Unfortunately, since we do not have this data, we must perform a permutation test. 
 
-To test the missingness of the `‘CAUSE.CATEGORY.DETAIL’` column, we hypothesized that the missingness is dependent on its mother column, the    			 `'CAUSE.CATEGORY’` column. Our hypotheses are as follows:
+To test the missingness of the `‘CAUSE.CATEGORY.DETAIL’` column, we hypothesized that the missingness might be dependent on either its parent column, the `‘CAUSE.CATEGORY’` column, or the `‘CLIMATE.CATEGORY’` column. Our hypotheses for the first test are as follows:
+
+#### ‘CAUSE.CATEGORY.DETAIL’  and ‘CAUSE.CATEGORY’ 
 
 **Null**: The distribution of `‘CAUSE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is the same as the distribution of `‘CAUSE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
 
@@ -153,7 +155,21 @@ In our permutation test, we shuffled `‘CAUSE.CATEGORY’` 1000 times.
 
 <iframe src="assets/plots/missingness analysis plots/nmar-analysis-tvd-plot.html" width=600 height=400 frameBorder=0></iframe>
 
-Wrapping up our test, we found that the p-value of the test  `p = 0.00099` is far below our significance level of 5%. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
+Wrapping up our test, we found that the p-value of the test  `p = 0.00099` is far below our significance level of 5%. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the missing data being dependent on the `‘CAUSE.CATEGORY’` column.
+
+#### ‘CAUSE.CATEGORY.DETAIL’  and ‘CLIMATE.CATEGORY’
+
+Null: The distribution of `‘CLIMATE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is the same as the distribution of  `‘CLIMATE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
+Alternative: The distribution of `‘CLIMATE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is different from the distribution of  `‘CLIMATE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
+
+Like our previous test, we used the TVD to compare each categorical distribution at the 5% significance level.
+
+This time, we shuffled the `’CLIMATE.CATEGORY’` column 1000 times.
+
+<iframe src="assets/plots/missingness analysis plots/nmar-analysis-tvd2-plot.html" width=600 height=400 frameBorder=0></iframe>
+
+For this hypothesis test, we found that the p-value of the test p = 0.501 is greater than our than the significance level which we tested at. We fail to reject the null hypothesis in this case, implying a high probability that the `‘CAUSE.CATEGORY.DETAIL’` does not depend on the `‘CLIMATE.CATEGORY’` column.
+
 
 ---
 ## Hypothesis Testing
