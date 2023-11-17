@@ -73,7 +73,7 @@ Since we were interested in the different causes of power outages, we proceeded 
 This indicates that the anomaly levels' distribution is slightly right-skewed. One could suggest that the graph's center lies within the range of -0.5 to 0. This interval pertains to the average temperature anomaly and not to the El Niño or La Niña phenomena.
 We visualized the count of power outages per cause category to identify the most common ones.
 
-**#Insert graph**
+<iframe src="assets/plots/univariate plots/univariate-outage-count-cause-category.html" width=800 height=600 frameBorder=0></iframe>
 
 After analyzing the data, it became evident that severe weather and system operability disruption were the most frequent causes.
 
