@@ -153,4 +153,4 @@ The absolute difference in means that we observed was `60.87142857143044`
 The graph above shows our observed difference in means relative to the distribution of our simulated test results.
 
 ### Conclusion
-We conclude that at the 5% significance level, given `p=0.854`, we are unable to reject our null hypothesis. From this, we can conclude that there may be no significant difference between the average loss in GSP for outages caused by severe weather versus outages caused by other reasons. The strong evidence in favor of our null hypothesis suggests that any change in real GSP for California just might be utterly random in terms of reasons for an outage.
+We conclude that at the 5% significance level, given `p = 0.854`, we are unable to reject our null hypothesis. From this, we can conclude that there may be no significant difference between the average loss in GSP for outages caused by severe weather versus outages caused by other reasons. The strong evidence in favor of our null hypothesis suggests that any change in real GSP for California just might be utterly random in terms of reasons for an outage.
