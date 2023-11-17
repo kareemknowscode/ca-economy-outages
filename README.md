@@ -23,7 +23,7 @@ In this project, we want to answer whether or not the occurrence of severe weath
 |`'OUTAGE.DURATION'` 		|The length of the outage in minutes.|
 |`'PC.REALGSP.STATE'` 		|Per capita real GSP of a given state (adj. for inflation, 2009 chained $USD)|
 
-`‘CAUSE.CATEGORY’` was key in our analysis as it contained information on what caused any given outage and `‘CAUSE.CATEGORY.DETAIL’` described the exact occurrence of that particular cause. We were mostly interested in severe weather from the `‘CAUSE.CATEGORY’` column, and ‘CAUSE.CATEGORY.DETAIL’ described the type of severe weather that occurred. `'PC.REALGSP.STATE'` contains the GSP (inflation adjusted) of a given state in any given year.
+`‘CAUSE.CATEGORY’` was key in our analysis as it contained information on what caused any given outage and `‘CAUSE.CATEGORY.DETAIL’` described the exact occurrence of that particular cause. We were mostly interested in severe weather from the `‘CAUSE.CATEGORY’` column, and `‘CAUSE.CATEGORY.DETAIL’` described the type of severe weather that occurred. `'PC.REALGSP.STATE'` contains the GSP (inflation adjusted) of a given state in any given year.
 
 ---
 ## Data Cleaning and Exploratory Data Analysis
