@@ -126,3 +126,27 @@ In our permutation test, we shuffled ‘CAUSE.CATEGORY’ 1000 times.
 **INSERT DISTRIBUTION OF TVDS (HISTOGRAM)**
 
 Wrapping up our test, we found that the p-value of the test ended up being p = 0.0019, which is far below our significance level of 0.05. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
+
+## Hypothesis Testing
+
+During our previous analysis, we found that severe weather was the cause of most power outages in California. Our current objective is to determine if there is a notable difference in the average GSP loss during these outages compared to those caused by other reasons in our ‘CAUSE.CATEGORY’ column.
+
+#### Setup
+
+**Null Hypothesis/H0**: The mean GSP loss during power outages caused specifically by severe weather is equal to the mean GSP loss during power outages caused by other reasons.
+
+**Alternative Hypothesis/H1**: The mean GSP loss during power outages caused specifically by severe weather is different from the mean GSP loss during power outages caused by other reasons.
+
+For this test, we selected the `‘CAUSE.CATEGORY’` and `‘PC.REALGSP.STATE’` columns. When performing this two-sided test, we wanted to take into consideration any form of outage causation and the real GSP of California itself, not including the rest of the United States. The test statistic we used was the absolute difference in means, to try and capture any change between the two groups we selected. 
+We decided to use a permutation test to account for variability in the data and assess whether or not our observed difference in means was real or random, and we will test at the 5% significance level.
+
+The absolute difference in means that we observed was `60.87142857143044`
+
+#### Testing
+
+#insert distribution plot#
+
+The graph above shows our observed difference in means relative to the distribution of our simulated test results.
+
+#### Conclusion
+We conclude that at the 5% significance level, given p=0.854, we are unable to reject our null hypothesis. From this, we can conclude that there may be no significant difference between the average loss in GSP for outages caused by severe weather versus outages caused by other reasons. The strong evidence in favor of our null hypothesis suggests that any change in real GSP for California just might be utterly random in terms of reasons for an outage.
