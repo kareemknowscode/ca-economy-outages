@@ -159,8 +159,9 @@ Wrapping up our test, we found that the p-value of the test  `p = 0.00099` is fa
 
 #### ‘CAUSE.CATEGORY.DETAIL’  and ‘CLIMATE.CATEGORY’
 
-Null: The distribution of `‘CLIMATE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is the same as the distribution of  `‘CLIMATE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
-Alternative: The distribution of `‘CLIMATE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is different from the distribution of  `‘CLIMATE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
+**Null**: The distribution of `‘CLIMATE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is the same as the distribution of  `‘CLIMATE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
+
+**Alternative**: The distribution of `‘CLIMATE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is different from the distribution of  `‘CLIMATE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
 
 Like our previous test, we used the TVD to compare each categorical distribution at the 5% significance level.
 
@@ -169,7 +170,6 @@ This time, we shuffled the `’CLIMATE.CATEGORY’` column 1000 times.
 <iframe src="assets/plots/missingness analysis plots/nmar-analysis-tvd2-plot.html" width=600 height=400 frameBorder=0></iframe>
 
 For this hypothesis test, we found that the p-value of the test p = 0.501 is greater than our than the significance level which we tested at. We fail to reject the null hypothesis in this case, implying a high probability that the `‘CAUSE.CATEGORY.DETAIL’` does not depend on the `‘CLIMATE.CATEGORY’` column.
-
 
 ---
 ## Hypothesis Testing
