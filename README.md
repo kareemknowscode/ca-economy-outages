@@ -68,12 +68,12 @@ Here is the head of our clean DataFrame:
 Since we were interested in the different causes of power outages, we proceeded to investigate markers of severe weather patterns by using the
 `‘ANOMALY.LEVEL’` column.
 
-<iframe src="assets/plots/univariate plots/univariate-distr-anomaly-levels.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/plots/univariate plots/univariate-distr-anomaly-levels.html" width=600 height=400 frameBorder=0></iframe>
 
 This indicates that the anomaly levels' distribution is slightly right-skewed. One could suggest that the graph's center lies within the range of -0.5 to 0. This interval pertains to the average temperature anomaly and not to the El Niño or La Niña phenomena.
 We visualized the count of power outages per cause category to identify the most common ones.
 
-<iframe src="assets/plots/univariate plots/univariate-outage-count-cause-category.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/plots/univariate plots/univariate-outage-count-cause-category.html" width=600 height=400 frameBorder=0></iframe>
 
 After analyzing the data, it became evident that severe weather and system operability disruption were the most frequent causes.
 
@@ -91,7 +91,7 @@ For our aggregate analysis, we calculated the average outage duration by climate
 
 **#Insert table**
 
-**#Insert plot**
+<iframe src="assets/plots/interesting aggregates/intr-agg-grouped-plot.html" width=600 height=400 frameBorder=0></iframe>
 
 It is observed that longer outages tend to happen more frequently during warmer temperatures, which can be attributed to the common occurrences of wildfires in California during the hotter seasons.
 
@@ -99,7 +99,7 @@ Next, we examined the different categories of causes and the total amount of tim
 
 **#Insert table**
 
-**#Insert plot**
+<iframe src="assets/plots/interesting aggregates/intr-agg-pivot-plot.html" width=600 height=400 frameBorder=0></iframe>
 
 Our plot shows the trends in outage duration per cause category from 2000 to 2016. We can see again that severe weather is the leading cause of power outages accounting for most of the total duration each year. The total outage duration has seen noticeable rises in certain years, particularly during the severe weather events that coincided with the Cedar Fire in 2003 and a major storm in 2011.
 
@@ -122,13 +122,11 @@ To test the missingness of the `‘CAUSE.CATEGORY.DETAIL’` column, we hypothes
 
 To test this, we plan on using the TVD to compare these two categorical distributions, and we will test at the 5% significance level.
 
-**INSERT PLOT HERE (maybe)**
-
 In our permutation test, we shuffled `‘CAUSE.CATEGORY’` 1000 times.
 
-**INSERT DISTRIBUTION OF TVDS (HISTOGRAM)**
+<iframe src="assets/plots/missingness analysis plots/nmar-analysis-tvd-plot.html" width=600 height=400 frameBorder=0></iframe>
 
-Wrapping up our test, we found that the p-value of the test ended up being `p = 0.00099`, which is far below our significance level of 5%. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
+Wrapping up our test, we found that the p-value of the test  `p = 0.00099` is far below our significance level of 5%. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
 
 ---
 ## Hypothesis Testing
@@ -148,7 +146,7 @@ The absolute difference in means that we observed was `60.87142857143044`
 
 ### Testing
 
-#insert distribution plot#
+<iframe src="assets/plots/hypothesis test plots/hyp-test-distr-plot.html" width=600 height=400 frameBorder=0></iframe>
 
 The graph above shows our observed difference in means relative to the distribution of our simulated test results.
 
