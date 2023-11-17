@@ -128,7 +128,7 @@ In our permutation test, we shuffled `‘CAUSE.CATEGORY’` 1000 times.
 
 **INSERT DISTRIBUTION OF TVDS (HISTOGRAM)**
 
-Wrapping up our test, we found that the p-value of the test ended up being `p = 0.0019`, which is far below our significance level of 5%. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
+Wrapping up our test, we found that the p-value of the test ended up being `p = 0.00099`, which is far below our significance level of 5%. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
 
 ---
 ## Hypothesis Testing
