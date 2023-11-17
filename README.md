@@ -62,13 +62,22 @@ To heighten the readability and precision of our data, we executed a series of m
 
 Here is the head of our clean DataFrame:
 
-| YEAR | MONTH | ANOMALY.LEVEL | CLIMATE.CATEGORY | OUTAGE.START.DATE       | OUTAGE.RESTORATION.DATE | CAUSE.CATEGORY               | CAUSE.CATEGORY.DETAIL | OUTAGE.DURATION | PC.REALGSP.STATE | OUTAGE.DURATION.HOURS | Anomaly |
-|------:|------:|--------------:|:------------------|:------------------------|:------------------------|:-----------------------------|:----------------------|------------------:|------------------:|-----------------------:|:--------|
-| 2007 | 9     | -0.9           | cold              | 2007-09-04 00:00:00    | 2007-09-04 00:00:00    | severe weather               | heatwave              | 420             | 55008             | 7                    | La Niña |
-| 2008 | 5     | -0.7           | cold              | 2008-05-08 00:00:00    | 2008-05-08 00:00:00    | system operability disruption | nan                   | 155             | 54713             | 2.58333              | La Niña |
-| 2006 | 5     | 0              | normal            | 2006-05-19 00:00:00    | 2006-05-19 00:00:00    | severe weather               | thunderstorm          | 437             | 54508             | 7.28333              | Normal  |
-| 2015 | 10    | 2              | warm              | 2015-10-13 00:00:00    | 2015-10-13 00:00:00    | public appeal                | nan                   | 247             | 56365             | 4.11667              | El Niño |
-| 2014 | 2     | -0.5           | cold              | 2014-02-06 00:00:00    | 2014-02-06 00:00:00    | fuel supply emergency        | Natural Gas           | 540             | 54606             | 9                    | La Niña |
+|   YEAR |   MONTH |   ANOMALY.LEVEL | CLIMATE.CATEGORY   | OUTAGE.START.DATE   | OUTAGE.RESTORATION.DATE   |
+|-------:|--------:|----------------:|:-------------------|:--------------------|:--------------------------|
+|   2007 |       9 |            -0.9 | cold               | 2007-09-04 00:00:00 | 2007-09-04 00:00:00       |
+|   2008 |       5 |            -0.7 | cold               | 2008-05-08 00:00:00 | 2008-05-08 00:00:00       |
+|   2006 |       5 |             0   | normal             | 2006-05-19 00:00:00 | 2006-05-19 00:00:00       |
+|   2015 |      10 |             2   | warm               | 2015-10-13 00:00:00 | 2015-10-13 00:00:00       |
+|   2014 |       2 |            -0.5 | cold               | 2014-02-06 00:00:00 | 2014-02-06 00:00:00       |
+
+| CAUSE.CATEGORY                | CAUSE.CATEGORY.DETAIL   | OUTAGE.DURATION | PC.REALGSP.STATE  | OUTAGE.DURATION.HOURS  | Anomaly |
+|:-----------------------------:|:-----------------------:|:---------------:|:-----------------:|:----------------------:|:-------:|
+| severe weather                | heatwave                | 420             | 55008             | 7                      | La Niña |
+| system operability disruption | nan                     | 155             | 54713             | 2.58333                | La Niña |
+| severe weather                | thunderstorm            | 437             | 54508             | 7.28333                | Normal  |
+| public appeal                 | nan                     | 247             | 56365             | 4.11667                | El Niño |
+| fuel supply emergency         | Natural Gas             | 540             | 54606             | 9                      | La Niña |
+
 
 
 ### Performing Univariate Analysis
