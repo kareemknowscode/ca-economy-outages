@@ -68,7 +68,7 @@ Here is the head of our clean DataFrame:
 Since we were interested in the different causes of power outages, we proceeded to investigate markers of severe weather patterns by using the
 `‘ANOMALY.LEVEL’` column.
 
-**#Insert graph**
+<iframe src="assets/plots/univariate plots/univariate-distr-anomaly-levels.html" width=800 height=600 frameBorder=0></iframe>
 
 This indicates that the anomaly levels' distribution is slightly right-skewed. One could suggest that the graph's center lies within the range of -0.5 to 0. This interval pertains to the average temperature anomaly and not to the El Niño or La Niña phenomena.
 We visualized the count of power outages per cause category to identify the most common ones.
