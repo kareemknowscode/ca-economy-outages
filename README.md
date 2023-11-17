@@ -8,6 +8,7 @@ This is a data science project that aims to investigate the correlation between 
 In this project, we want to answer whether or not the occurrence of severe weather events impacts power outages in California, and to what extent do these outages contribute to the overall loss in production output, as measured by the GSP of California? The objective is to conduct exploratory data analysis using detailed information on severe weather incidents to assess the severity of power outages and their economic implications on the state's productivity. The dataset we used contains information on power outages recorded in different areas in the United States. Along with data on major outages, the data contains information describing the geographical features, climate, land use, electricity consumption, and economic characteristics of the area or state in which the outage occurred. The original dataset contained 57 columns containing the previously listed data, and 1535 rows of observations for outages in each US state. For our purposes, we removed all variables not pertaining to our research focus and worked with only 40 variables out of the original 57. 
 
 ### Important columns 
+
 | Variables					|Description|
 | --- 						|---|
 |'YEAR' 					|Year that the outage occurred|
