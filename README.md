@@ -101,6 +101,7 @@ Next, we examined the different categories of causes and the total amount of tim
 
 Our plot shows the trends in outage duration per cause category from 2000 to 2016. We can see again that severe weather is the leading cause of power outages accounting for most of the total duration each year. The total outage duration has seen noticeable rises in certain years, particularly during the severe weather events that coincided with the Cedar Fire in 2003 and a major storm in 2011.
 
+---
 ## Assessment of Missingness
 
 ### NMAR analysis
@@ -127,6 +128,7 @@ In our permutation test, we shuffled ‘CAUSE.CATEGORY’ 1000 times.
 
 Wrapping up our test, we found that the p-value of the test ended up being p = 0.0019, which is far below our significance level of 0.05. From this, we rejected the null hypothesis, meaning that there is a high probability that the distributions we tested are different, which in turn implies that there is a high likelihood of the data being MAR.
 
+---
 ## Hypothesis Testing
 
 During our previous analysis, we found that severe weather was the cause of most power outages in California. Our current objective is to determine if there is a notable difference in the average GSP loss during these outages compared to those caused by other reasons in our ‘CAUSE.CATEGORY’ column.
