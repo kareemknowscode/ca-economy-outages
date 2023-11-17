@@ -91,7 +91,7 @@ For our aggregate analysis, we calculated the average outage duration by climate
 
 **#Insert table**
 
-<iframe src="assets/plots/interesting aggregates/intr-agg-grouped-plot.html" width=600 height=400 frameBorder=0></iframe>
+<iframe src="assets/plots/interesting aggregates plots/intr-agg-grouped-plot.html" width=600 height=400 frameBorder=0></iframe>
 
 It is observed that longer outages tend to happen more frequently during warmer temperatures, which can be attributed to the common occurrences of wildfires in California during the hotter seasons.
 
@@ -99,7 +99,7 @@ Next, we examined the different categories of causes and the total amount of tim
 
 **#Insert table**
 
-<iframe src="assets/plots/interesting aggregates/intr-agg-pivot-plot.html" width=600 height=400 frameBorder=0></iframe>
+<iframe src="assets/plots/interesting aggregates plots/intr-agg-pivot-plot.html" width=600 height=400 frameBorder=0></iframe>
 
 Our plot shows the trends in outage duration per cause category from 2000 to 2016. We can see again that severe weather is the leading cause of power outages accounting for most of the total duration each year. The total outage duration has seen noticeable rises in certain years, particularly during the severe weather events that coincided with the Cedar Fire in 2003 and a major storm in 2011.
 
