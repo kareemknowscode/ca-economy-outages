@@ -30,30 +30,33 @@ In this project, we want to answer whether or not the occurrence of severe weath
 To heighten the readability and precision of our data, we executed a series of measures to tidy up our DataFrame. A description of each original column can be found in this article.
 
 1. **Create a copy of the Excel original data file and delete columns that were not significant for our analysis** 
+
 Geographic area columns such as ‘U.S._STATE’, ‘POSTAL.CODE’, and ‘NERC.REGION’ were deleted as we are working with one state only, California.
 Anything related to electricity prices and consumption, population, and land area is removed.
 
 2. **Import the Excel sheet to our notebook, remove ‘variables’ column and the first row of DataFrame**
+
 The ‘variables’ column is removed, since each column type was checked later on with Python.
 The first row of DataFrame is deleted as it contains units for each column not needed for our analysis.
 
 3. **Convert columns into correct types**
+
 This step was made to provide accuracy for future calculations. For instance, the columns ‘OUTAGE.START.DATE’ and ‘OUTAGE.RESTORATION.DATE’ were converted into DateTime type. ‘YEAR’ and ‘MONTH’ were converted to int type. ‘ANOMALY.LEVEL’ and ‘PC.REALGSP.STATE’ are converted to float type.
 
 4. **Check the type of all columns. Find a table with the final types below**
 
 |Variables 							|Data Type|
 |---								|---|
-|YEAR                               |int64|
-|MONTH                              |int64|
-|ANOMALY.LEVEL                     	|float64|
-|CLIMATE.CATEGORY                   |object|
-|OUTAGE.START.DATE          		|datetime64[ns]|
-|OUTAGE.RESTORATION.DATE    		|datetime64[ns]|
-|CAUSE.CATEGORY                     |object|
-|CAUSE.CATEGORY.DETAIL              |object|
-|OUTAGE.DURATION                   	|float64|
-|PC.REALGSP.STATE                  	|float64|
+|'YEAR'                               |int64|
+|'MONTH'                              |int64|
+|'ANOMALY.LEVEL'                     	|float64|
+|'CLIMATE.CATEGORY'                   |object|
+|'OUTAGE.START.DATE'          		|datetime64[ns]|
+|'OUTAGE.RESTORATION.DATE'    		|datetime64[ns]|
+|'CAUSE.CATEGORY'                     |object|
+|'CAUSE.CATEGORY.DETAIL'              |object|
+|'OUTAGE.DURATION'                   	|float64|
+|'PC.REALGSP.STATE'                  	|float64|
 
 Here is the head of our clean DataFrame:
  **INSERT DF HERE**
