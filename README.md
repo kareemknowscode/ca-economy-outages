@@ -5,22 +5,23 @@ Authors: Kareem Mazboudi, Mariana Paco
 This is a data science project that aims to investigate the correlation between power outages and fluctuations in a state's gross state product (GSP) within California. The dataset utilized for this investigation can be accessed via the following source. Our findings are presented in this report, which was completed as part of the DSC80 course at UCSD.
 
 ## Introduction
+
 In this project, we want to answer whether or not the occurrence of severe weather events impacts power outages in California, and to what extent do these outages contribute to the overall loss in production output, as measured by the GSP of California? The objective is to conduct exploratory data analysis using detailed information on severe weather incidents to assess the severity of power outages and their economic implications on the state's productivity. The dataset we used contains information on power outages recorded in different areas in the United States. Along with data on major outages, the data contains information describing the geographical features, climate, land use, electricity consumption, and economic characteristics of the area or state in which the outage occurred. The original dataset contained 57 columns containing the previously listed data, and 1535 rows of observations for outages in each US state. For our purposes, we removed all variables not pertaining to our research focus and worked with only 40 variables out of the original 57. 
 
 ### Important columns 
 
-| Variables					|Description|
+|*Variables*				|*Description*|
 | --- 						|---|
-|'YEAR' 					|Year that the outage occurred|
-|'MONTH' 					|Month that the outage occurred|
-|'ANOMALY.LEVEL' 			|Oceanic Niño Index. Values of +0.5 or higher indicate El Niño. Values of -0.5 or lower indicate La Niña.|
-|'CLIMATE.CATEGORY' 		|Categorical data describing the climate at the time of the outage|
-|'OUTAGE.START.DATE'  		|Day, month, and year of when exactly the outage began|
-|'OUTAGE.RESTORATION.DATE'  |Day, month, and year of when exactly the outage was fixed|
-|'CAUSE.CATEGORY' 			|Categorical data describing the cause of the outage. E.g. “severe weather”|
-|'CAUSE.CATEGORY.DETAIL' 	|Details as to the cause of the outage. E.g. “heavy wind”|
-|'OUTAGE.DURATION' 			|The length of the outage in minutes.|
-|'PC.REALGSP.STATE' 		|Per capita real GSP of a given state (adj. for inflation, 2009 chained $USD)|
+|`'YEAR'` 					|Year that the outage occurred|
+|`'MONTH'`					|Month that the outage occurred|
+|`'ANOMALY.LEVEL'`			|Oceanic Niño Index. Values of +0.5 or higher indicate El Niño. Values of -0.5 or lower indicate La Niña.|
+|`'CLIMATE.CATEGORY'` 		|Categorical data describing the climate at the time of the outage|
+|`'OUTAGE.START.DATE'`  	|Day, month, and year of when exactly the outage began|
+|`'OUTAGE.RESTORATION.DATE'`|Day, month, and year of when exactly the outage was fixed|
+|`'CAUSE.CATEGORY'` 		|Categorical data describing the cause of the outage. E.g. “severe weather”|
+|`'CAUSE.CATEGORY.DETAIL'` 	|Details as to the cause of the outage. E.g. “heavy wind”|
+|`'OUTAGE.DURATION'` 		|The length of the outage in minutes.|
+|`'PC.REALGSP.STATE'` 		|Per capita real GSP of a given state (adj. for inflation, 2009 chained $USD)|
 
 ‘CAUSE.CATEGORY’ was key in our analysis as it contained information on what caused any given outage and ‘CAUSE.CATEGORY.DETAIL’  described the exact occurrence of that particular cause. We were mostly interested in severe weather from the ‘CAUSE.CATEGORY’ column, and ‘CAUSE.CATEGORY.DETAIL’ described the type of severe weather that occurred. 'PC.REALGSP.STATE' contains the GSP (inflation adjusted) of a given state in any given year.
 
@@ -46,18 +47,18 @@ This step was made to provide accuracy for future calculations. For instance, th
 
 4. **Check the type of all columns. Find a table with the final types below**
 
-|Variables 							|Data Type|
-|---								|---|
-|'YEAR'                               |int64|
-|'MONTH'                              |int64|
-|'ANOMALY.LEVEL'                     	|float64|
-|'CLIMATE.CATEGORY'                   |object|
-|'OUTAGE.START.DATE'          		|datetime64[ns]|
-|'OUTAGE.RESTORATION.DATE'    		|datetime64[ns]|
-|'CAUSE.CATEGORY'                     |object|
-|'CAUSE.CATEGORY.DETAIL'              |object|
-|'OUTAGE.DURATION'                   	|float64|
-|'PC.REALGSP.STATE'                  	|float64|
+|*Variables* 							|*Data Type*|
+|---									|---|
+|`'YEAR'`                               |int64|
+|`'MONTH'`                              |int64|
+|`'ANOMALY.LEVEL'`                     	|float64|
+|`'CLIMATE.CATEGORY'`                   |object|
+|`'OUTAGE.START.DATE'`          		|datetime64[ns]|
+|`'OUTAGE.RESTORATION.DATE'`    		|datetime64[ns]|
+|`'CAUSE.CATEGORY'`                     |object|
+|`'CAUSE.CATEGORY.DETAIL'`              |object|
+|`'OUTAGE.DURATION'`                   	|float64|
+|`'PC.REALGSP.STATE'`                  	|float64|
 
 Here is the head of our clean DataFrame:
  **INSERT DF HERE**
@@ -133,7 +134,7 @@ Wrapping up our test, we found that the p-value of the test ended up being p = 0
 
 During our previous analysis, we found that severe weather was the cause of most power outages in California. Our current objective is to determine if there is a notable difference in the average GSP loss during these outages compared to those caused by other reasons in our ‘CAUSE.CATEGORY’ column.
 
-#### Setup
+### Setup
 
 **Null Hypothesis/H0**: The mean GSP loss during power outages caused specifically by severe weather is equal to the mean GSP loss during power outages caused by other reasons.
 
@@ -144,11 +145,11 @@ We decided to use a permutation test to account for variability in the data and 
 
 The absolute difference in means that we observed was `60.87142857143044`
 
-#### Testing
+### Testing
 
 #insert distribution plot#
 
 The graph above shows our observed difference in means relative to the distribution of our simulated test results.
 
-#### Conclusion
+### Conclusion
 We conclude that at the 5% significance level, given p=0.854, we are unable to reject our null hypothesis. From this, we can conclude that there may be no significant difference between the average loss in GSP for outages caused by severe weather versus outages caused by other reasons. The strong evidence in favor of our null hypothesis suggests that any change in real GSP for California just might be utterly random in terms of reasons for an outage.
