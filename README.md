@@ -63,22 +63,40 @@ Here is the head of our clean DataFrame:
  **INSERT DF HERE**
 
 ### Performing Univariate Analysis
+
 Since we were interested in the different causes of power outages, we proceeded to investigate markers of severe weather patterns by using the ‘ANOMALY.LEVEL’ column.
+
 **#Insert graph**
+
 This indicates that the anomaly levels' distribution is slightly right-skewed. One could suggest that the graph's center lies within the range of -0.5 to 0. This interval pertains to the average temperature anomaly and not to the El Niño or La Niña phenomena.
 We visualized the count of power outages per cause category to identify the most common ones.
+
 **#Insert graph**
+
 After analyzing the data, it became evident that severe weather and system operability disruption were the most frequent causes.
-Performing Bivariate Analysis and Aggregation
+
+### Performing Bivariate Analysis and Aggregation
+
 Then, we performed a bivariate analysis between outage duration and anomaly levels to investigate the relationship between longer outages and weather using the indicator of anomaly levels.
+
 **#Insert graph**
+
 We can see that there are many outliers during normal and non-normal anomaly levels. Thus, we cannot confirm that longer outages are caused by severe weather under the index of anomaly levels.
-Interesting Aggregates
+
+### Interesting Aggregates
+
 For our aggregate analysis, we calculated the average outage duration by climate category (cold, normal, and warm). Look at our grouped table below:
+
 **#Insert table**
+
 **#Insert plot**
+
 It is observed that longer outages tend to happen more frequently during warmer temperatures, which can be attributed to the common occurrences of wildfires in California during the hotter seasons.
+
 Next, we examined the different categories of causes and the total amount of time that outages lasted each year using a pivot table. See below the head of the mentioned table:
+
 **#Insert table**
+
 **#Insert plot**
+
 Our plot shows the trends in outage duration per cause category from 2000 to 2016. We can see again that severe weather is the leading cause of power outages accounting for most of the total duration each year. The total outage duration has seen noticeable rises in certain years, particularly during the severe weather events that coincided with the Cedar Fire in 2003 and a major storm in 2011.
