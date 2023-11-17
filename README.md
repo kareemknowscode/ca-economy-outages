@@ -35,6 +35,7 @@ To heighten the readability and precision of our data, we executed a series of m
 	Geographic area columns such as ‘U.S._STATE’, ‘POSTAL.CODE’, and ‘NERC.REGION’ were deleted as we are working with one state only, California.
 	Anything related to electricity prices and consumption, population, and land area is removed.
 
+
 2. **Import the Excel sheet to our notebook, remove ‘variables’ column and the first row of DataFrame**
 
 	The ‘variables’ column is removed, since each column type was checked later on with Python.
@@ -64,7 +65,8 @@ Here is the head of our clean DataFrame:
 
 ### Performing Univariate Analysis
 
-Since we were interested in the different causes of power outages, we proceeded to investigate markers of severe weather patterns by using the ‘ANOMALY.LEVEL’ column.
+Since we were interested in the different causes of power outages, we proceeded to investigate markers of severe weather patterns by using the
+`‘ANOMALY.LEVEL’` column.
 
 **#Insert graph**
 
@@ -106,23 +108,23 @@ Our plot shows the trends in outage duration per cause category from 2000 to 201
 
 ### NMAR analysis
 
-In our dataset, the ‘OUTAGE.RESTORATION.DATE’ column, containing data on the end date of power outages, includes NaN values that correspond consistently for each outage in the dataset.  We predict that this data could be missing for a variety of reasons, such as instances where data was not recorded for some reason, such as the fact the outage was so minor the researchers thought to leave it out. There is even the possibility that a given power outage may not have ever officially ended, which might contribute to the missingness. In fact, we believe that this missingness could be explained with specific geographic data for any given power outage, such as the city that which the outage occurred or even the location of the power station that went down. Through the geographic data, we could perform a permutation test to determine whether or not the missingness could be attributed to any of the reasons listed beforehand.
+In our dataset, the `‘OUTAGE.RESTORATION.DATE’` column, containing data on the end date of power outages, includes NaN values that correspond consistently for each outage in the dataset.  We predict that this data could be missing for a variety of reasons, such as instances where data was not recorded for some reason, such as the fact the outage was so minor the researchers thought to leave it out. There is even the possibility that a given power outage may not have ever officially ended, which might contribute to the missingness. In fact, we believe that this missingness could be explained with specific geographic data for any given power outage, such as the city that which the outage occurred or even the location of the power station that went down. Through the geographic data, we could perform a permutation test to determine whether or not the missingness could be attributed to any of the reasons listed beforehand.
 
 ### Missingness Dependency
 
-We want to focus on the missingness of two very important columns in terms of our analysis. In the ‘CAUSE.CATEGORY.DETAIL’ column, there are some NaN values we discovered when filtering for values in California. From this, we hypothesized that these values might be missing for a multitude of reasons. For example, at the time of the creation of the dataset, the researcher may not have been able to include the details of an outage caused by something, such as severe weather. For instance, when the dataset was being created, the researcher might not have had enough knowledge to include the specifics of a power outage caused by severe weather. Factors like the type of weather leading to the disruption or other possible causes of the outage could have been overlooked. If we wanted more information to understand the missingness, we would need data on something like the season at the time of the outage and the region of occurrence, the latter of which is what we have access to, but only at a general level.
+We want to focus on the missingness of two very important columns in terms of our analysis. In the `‘CAUSE.CATEGORY.DETAIL’` column, there are some NaN values we discovered when filtering for values in California. From this, we hypothesized that these values might be missing for a multitude of reasons. For example, at the time of the creation of the dataset, the researcher may not have been able to include the details of an outage caused by something, such as severe weather. For instance, when the dataset was being created, the researcher might not have had enough knowledge to include the specifics of a power outage caused by severe weather. Factors like the type of weather leading to the disruption or other possible causes of the outage could have been overlooked. If we wanted more information to understand the missingness, we would need data on something like the season at the time of the outage and the region of occurrence, the latter of which is what we have access to, but only at a general level.
 
-To test the missingness of the ‘CAUSE.CATEGORY.DETAIL’ column, we hypothesized that the missingness is dependent on its mother column, the ‘CAUSE.CATEGORY’ column. Our hypotheses are as follows:
+To test the missingness of the `‘CAUSE.CATEGORY.DETAIL’` column, we hypothesized that the missingness is dependent on its mother column, the    			 `'CAUSE.CATEGORY’` column. Our hypotheses are as follows:
 
-**Null**: The distribution of ‘CAUSE.CATEGORY’ when ‘CAUSE.CATEGORY.DETAIL’ is missing is the same as the distribution of  ‘CAUSE.CATEGORY’ when  ‘CAUSE.CATEGORY.DETAIL’ is not missing.
+**Null**: The distribution of `‘CAUSE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is the same as the distribution of `‘CAUSE.CATEGORY’` when  `‘CAUSE.CATEGORY.DETAIL’` is not missing.
 
-**Alternative**: The distribution of ‘CAUSE.CATEGORY’ when ‘CAUSE.CATEGORY.DETAIL’ is missing is different from the distribution of  ‘CAUSE.CATEGORY’ when  ‘CAUSE.CATEGORY.DETAIL’ is not missing.
+**Alternative**: The distribution of `‘CAUSE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is missing is different from the distribution of `‘CAUSE.CATEGORY’` when `‘CAUSE.CATEGORY.DETAIL’` is not missing.
 
 To test this, we plan on using the TVD to compare these two categorical distributions, and we will test at the 5% significance level.
 
 **INSERT PLOT HERE (maybe)**
 
-In our permutation test, we shuffled ‘CAUSE.CATEGORY’ 1000 times.
+In our permutation test, we shuffled `‘CAUSE.CATEGORY’` 1000 times.
 
 **INSERT DISTRIBUTION OF TVDS (HISTOGRAM)**
 
@@ -131,7 +133,7 @@ Wrapping up our test, we found that the p-value of the test ended up being p = 0
 ---
 ## Hypothesis Testing
 
-During our previous analysis, we found that severe weather was the cause of most power outages in California. Our current objective is to determine if there is a notable difference in the average GSP loss during these outages compared to those caused by other reasons in our ‘CAUSE.CATEGORY’ column.
+During our previous analysis, we found that severe weather was the cause of most power outages in California. Our current objective is to determine if there is a notable difference in the average GSP loss during these outages compared to those caused by other reasons in our `‘CAUSE.CATEGORY’` column.
 
 ### Setup
 
