@@ -32,9 +32,8 @@ To heighten the readability and precision of our data, we executed a series of m
 
 1. **Create a copy of the Excel original data file and delete columns that were not significant for our analysis** 
 
-Geographic area columns such as ‘U.S._STATE’, ‘POSTAL.CODE’, and ‘NERC.REGION’ were deleted as we are working with one state only, California.
-Anything related to electricity prices and consumption, population, and land area is removed.
-
+	Geographic area columns such as ‘U.S._STATE’, ‘POSTAL.CODE’, and ‘NERC.REGION’ were deleted as we are working with one state only, California.
+	Anything related to electricity prices and consumption, population, and land area is removed.
 
 2. **Import the Excel sheet to our notebook, remove ‘variables’ column and the first row of DataFrame**
 
