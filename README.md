@@ -81,7 +81,7 @@ After analyzing the data, it became evident that severe weather and system opera
 
 Then, we performed a bivariate analysis between outage duration and anomaly levels to investigate the relationship between longer outages and weather using the indicator of anomaly levels.
 
-**#Insert graph**
+<iframe src="assets/plots/bivariate plots/bivariate-outage-dir-scatter.html" width=600 height=400 frameBorder=0></iframe>
 
 We can see that there are many outliers during normal and non-normal anomaly levels. Thus, we cannot confirm that longer outages are caused by severe weather under the index of anomaly levels.
 
