@@ -106,7 +106,11 @@ We can see that there are many outliers during normal and non-normal anomaly lev
 
 For our aggregate analysis, we calculated the average outage duration by climate category (cold, normal, and warm). Look at our grouped table below:
 
-**#Insert table**
+| CLIMATE.CATEGORY | OUTAGE.DURATION |
+|:-----------------:|-----------------:|
+| cold              |         1787.67 |
+| normal            |         1273.5  |
+| warm              |         2117.45 |
 
 <iframe src="assets/plots/interesting aggregates plots/intr-agg-grouped-plot.html" width=600 height=400 frameBorder=0></iframe>
 
@@ -114,7 +118,13 @@ It is observed that longer outages tend to happen more frequently during warmer 
 
 Next, we examined the different categories of causes and the total amount of time that outages lasted each year using a pivot table. See below the head of the mentioned table:
 
-**#Insert table**
+| equipment failure | fuel supply emergency | intentional attack | islanding | public appeal | severe weather | system operability disruption |
+|-------------------:|----------------------:|---------------------:|----------:|--------------:|---------------:|-------------------------------:|
+|                  0 |                     0 |                    0 |         0 |              0 |              0 |                              0 |
+|                  0 |                     0 |                    0 |         0 |            769 |              0 |                           4455 |
+|                  0 |                     0 |                    0 |         0 |              0 |          14760 |                            383 |
+|               2039 |                     0 |                    0 |         0 |              0 |          41021 |                              0 |
+|                 64 |                     0 |                    0 |         0 |              0 |          10655 |                            194 |
 
 <iframe src="assets/plots/interesting aggregates plots/intr-agg-pivot-plot.html" width=600 height=400 frameBorder=0></iframe>
 
