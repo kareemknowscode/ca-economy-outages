@@ -169,7 +169,7 @@ This time, we shuffled the `’CLIMATE.CATEGORY’` column 1000 times.
 
 <iframe src="assets/plots/missingness analysis plots/nmar-analysis-tvd2-plot.html" width=600 height=400 frameBorder=0></iframe>
 
-For this hypothesis test, we found that the p-value of the test `p = 0.501` is greater than our than the significance level which we tested at. We fail to reject the null hypothesis in this case, implying a high probability that the `‘CAUSE.CATEGORY.DETAIL’` does not depend on the `‘CLIMATE.CATEGORY’` column.
+For this hypothesis test, we found that the p-value of the test `p = 0.501` is greater than the significance level which we tested at. We fail to reject the null hypothesis in this case, implying a high probability that the `‘CAUSE.CATEGORY.DETAIL’` does not depend on the `‘CLIMATE.CATEGORY’` column.
 
 ---
 ## Hypothesis Testing
