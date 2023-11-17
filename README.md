@@ -23,7 +23,7 @@ In this project, we want to answer whether or not the occurrence of severe weath
 |`'OUTAGE.DURATION'` 		|The length of the outage in minutes.|
 |`'PC.REALGSP.STATE'` 		|Per capita real GSP of a given state (adj. for inflation, 2009 chained $USD)|
 
-‘CAUSE.CATEGORY’ was key in our analysis as it contained information on what caused any given outage and ‘CAUSE.CATEGORY.DETAIL’  described the exact occurrence of that particular cause. We were mostly interested in severe weather from the ‘CAUSE.CATEGORY’ column, and ‘CAUSE.CATEGORY.DETAIL’ described the type of severe weather that occurred. 'PC.REALGSP.STATE' contains the GSP (inflation adjusted) of a given state in any given year.
+`‘CAUSE.CATEGORY’` was key in our analysis as it contained information on what caused any given outage and `‘CAUSE.CATEGORY.DETAIL’` described the exact occurrence of that particular cause. We were mostly interested in severe weather from the `‘CAUSE.CATEGORY’` column, and ‘CAUSE.CATEGORY.DETAIL’ described the type of severe weather that occurred. `'PC.REALGSP.STATE'` contains the GSP (inflation adjusted) of a given state in any given year.
 
 ---
 ## Data Cleaning and Exploratory Data Analysis
@@ -32,18 +32,18 @@ To heighten the readability and precision of our data, we executed a series of m
 
 1. **Create a copy of the Excel original data file and delete columns that were not significant for our analysis** 
 
-	Geographic area columns such as ‘U.S._STATE’, ‘POSTAL.CODE’, and ‘NERC.REGION’ were deleted as we are working with one state only, California.
+	Geographic area columns such as `‘U.S._STATE’`, `‘POSTAL.CODE’`, and `‘NERC.REGION’` were deleted as we are working with one state only, California.
 	Anything related to electricity prices and consumption, population, and land area is removed.
 
 
 2. **Import the Excel sheet to our notebook, remove ‘variables’ column and the first row of DataFrame**
 
-	The ‘variables’ column is removed, since each column type was checked later on with Python.
+	The `‘variables’` column is removed, since each column type was checked later on with Python.
 	The first row of DataFrame is deleted as it contains units for each column not needed for our analysis.
 
 3. **Convert columns into correct types**
 
-	This step was made to provide accuracy for future calculations. For instance, the columns ‘OUTAGE.START.DATE’ and ‘OUTAGE.RESTORATION.DATE’ were converted into DateTime type. ‘YEAR’ and ‘MONTH’ were converted to int type. ‘ANOMALY.LEVEL’ and ‘PC.REALGSP.STATE’ are converted to float type.
+	This step was made to provide accuracy for future calculations. For instance, the columns `‘OUTAGE.START.DATE’` and `‘OUTAGE.RESTORATION.DATE’` were converted into DateTime type. `‘YEAR’` and `‘MONTH’` were converted to int type. `‘ANOMALY.LEVEL’` and `‘PC.REALGSP.STATE’` are converted to float type.
 
 4. **Check the type of all columns. Find a table with the final types below**
 
