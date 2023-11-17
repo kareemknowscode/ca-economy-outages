@@ -49,16 +49,16 @@ This step was made to provide accuracy for future calculations. For instance, th
 
 |*Variables* 							|*Data Type*|
 |---									|---|
-|`'YEAR'`                               |int64|
-|`'MONTH'`                              |int64|
-|`'ANOMALY.LEVEL'`                     	|float64|
-|`'CLIMATE.CATEGORY'`                   |object|
-|`'OUTAGE.START.DATE'`          		|datetime64[ns]|
-|`'OUTAGE.RESTORATION.DATE'`    		|datetime64[ns]|
-|`'CAUSE.CATEGORY'`                     |object|
-|`'CAUSE.CATEGORY.DETAIL'`              |object|
-|`'OUTAGE.DURATION'`                   	|float64|
-|`'PC.REALGSP.STATE'`                  	|float64|
+|`'YEAR'`                               |*int64*|
+|`'MONTH'`                              |*int64*|
+|`'ANOMALY.LEVEL'`                      |*float64*|
+|`'CLIMATE.CATEGORY'`                   |*object*|
+|`'OUTAGE.START.DATE'`          		|*datetime64[ns]*|
+|`'OUTAGE.RESTORATION.DATE'`    		|*datetime64[ns]*|
+|`'CAUSE.CATEGORY'`                     |*object*|
+|`'CAUSE.CATEGORY.DETAIL'`              |*object*|
+|`'OUTAGE.DURATION'`                   	|*float64*|
+|`'PC.REALGSP.STATE'`                  	|*float64*|
 
 Here is the head of our clean DataFrame:
  **INSERT DF HERE**
