@@ -2,7 +2,7 @@
 
 Authors: Kareem Mazboudi, Mariana Paco
 
-This is a data science project that aims to investigate the correlation between power outages and fluctuations in a state's gross state product (GSP) within California. The dataset utilized for this investigation can be accessed via the following source. Our findings are presented in this report, which was completed as part of the DSC80 course at UCSD.
+This is a data science project that aims to investigate the correlation between power outages and fluctuations in a state's gross state product (GSP) within California. The dataset utilized for this investigation can be accessed via the following source. Our findings are presented in this report, which was completed as part of the DSC80 course at UCSD. This project is a two-part analysis with the second part found [here](https://kareemknowscode.github.io/outage-severity-model/).
 
 ## Introduction
 
